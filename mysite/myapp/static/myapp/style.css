@@ -1,3 +1,17 @@
+
+body {
+    font-family: Arial;
+    margin: 0;
+  }
+  
+
+.ba-text {
+    padding: 60px;
+    text-align: center;
+    background: darkslategrey;
+    color: white;
+    font-size: 30px;
+}
 .banner {
     background-color: darkslategrey;
     width: 100%;
@@ -6,10 +20,3 @@
     color: white;
 }
 
-.banner .banner-text{
-    top: 50%;
-    left: 50%;
-    position absolute;
-    transform: translate(-50%, -50%);
-    color: white;
-}
