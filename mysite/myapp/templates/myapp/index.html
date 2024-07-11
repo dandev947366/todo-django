@@ -43,7 +43,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Task name: {{task.name}}</h5>
                     <p><b>Priority: {{task.priority}}</b></p>
-                    <a href="" class="btn btn-danger">Done</a>
+                    <a href="{% url 'delete' task.id %}" class="btn btn-danger">Done</a>
                 </div>
             </div>
             {% endfor %}
