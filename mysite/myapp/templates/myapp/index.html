@@ -51,6 +51,7 @@
                     <p><b>Priority: {{task.priority}}</b></p>
                     <p><b>Created at: {{task.date}}</b></p>
                     <a href="{% url 'delete' task.id %}" class="btn btn-danger">Done</a>
+                    <a href="{% url 'update' task.id %}" class="btn btn-success">Update</a>
                 </div>
             </div>
             {% endfor %}
