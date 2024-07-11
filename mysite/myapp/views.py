@@ -1,8 +1,30 @@
 from django.shortcuts import render, redirect
 from .models import Task
 from .forms import TodoForm
+from django.views.generic import ListView
+from django.views.generic.detail import DetailView
+from django.views.generic.edit import UpdateView
+from django.urls import reverse_lazy
 
-
+class TaskListView(ListView):
+    model = Task
+    template_name = 'myapp/index.html'
+    context_object_name = 'task_list'
+    
+class TaskDetailView(DetailView):
+    model=Task
+    template_name="myapp/detail.html"
+    context_object_name='task'
+    
+class TaskUpdateView():
+    model=Task
+    template_name="myapp/update.html"
+    context_object_name='task'
+    fields = ('name', 'priority', 'date')
+    def get_success_url(self):
+        return reverse_lazy('cbvdetail', kwargs={'pk':self.object.id})
+        
+        
 def index(request):
     task_list = Task.objects.all()
     if request.method == 'POST':
